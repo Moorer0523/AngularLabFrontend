@@ -25,6 +25,15 @@ export class QuestionListComponent implements OnInit {
     }
   ];
 
+  
+  toggleFlip(event: Event) {
+    const card = (event.currentTarget as HTMLElement).querySelector('.flip-card-inner');
+    if (card) {
+      card.classList.toggle('flipped');
+    }
+  }
+
+
   constructor() {}
 
   ngOnInit(): void {}
