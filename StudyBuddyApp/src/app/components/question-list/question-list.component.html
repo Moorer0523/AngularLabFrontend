@@ -1,0 +1,12 @@
+<div *ngFor="let question of questions" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h3>{{ question.QuestionText }}</h3>
+      </div>
+      <div class="flip-card-back">
+        <ul>
+          <li *ngFor="let answer of question.Answers">{{ answer }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
