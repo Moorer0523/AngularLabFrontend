@@ -16,27 +16,27 @@ export class QuestionServiceService {
   constructor(private http : HttpClient) { }
 
 
-  getQuestions(): Observable<Question>{
-    return this.http.get<Question>(environment.apiUrl)
+  getQuestions(): Observable<Question[]>{
+    return this.http.get<Question[]>(environment.apiUrl+ `Question`)
   }
 
   getQuestion(id : number): Observable<Question>{
-    return this.http.get<Question>(environment.apiUrl + `Questions/${id}`)
+    return this.http.get<Question>(environment.apiUrl + `Question/${id}`)
   }
 
   putQuestion(question : Question): Observable<Question>{
-    return this.http.put<Question>(environment.apiUrl + `Questions/${question.Id}`, question)
+    return this.http.put<Question>(environment.apiUrl + `Question/${question.Id}`, question)
   }
 
-  postQuestion(Question : Question): Observable<Omit<Question,"id">>{
-    console.log(Question)
-    return this.http.post<Question>(environment.apiUrl + 'Questions', Question)
+  postQuestion(question : Question): Observable<Omit<Question,"Id">>{
+    console.log(question)
+    return this.http.post<Question>(environment.apiUrl + 'Question', question)
   }
 
   deleteQuestion(Question : Question): boolean{
-    console.log(environment.apiUrl + `Questions/${Question.Id}`)
+    console.log(environment.apiUrl + `Question/${Question.Id}`)
     let response = false
-    this.http.delete(environment.apiUrl + `Questions/${Question.Id}`).subscribe({
+    this.http.delete(environment.apiUrl + `Question/${Question.Id}`).subscribe({
       next: data => {
           this.status = 'True';
           response = true
@@ -47,7 +47,7 @@ export class QuestionServiceService {
           console.error('There was an error!', error);
       }
   });
-
+  console.log("delete response: " + response)
     return response
   }
 }
