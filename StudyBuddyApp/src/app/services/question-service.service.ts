@@ -33,8 +33,8 @@ export class QuestionServiceService {
     return this.http.post<Question>(environment.apiUrl + 'Question', question)
   }
 
+  //Specifically changed this function to return a boolean as a method of checking to see if the delete attempt was successful or not. 
   deleteQuestion(Question : Question): boolean{
-    console.log(environment.apiUrl + `Question/${Question.Id}`)
     let response = false
     this.http.delete(environment.apiUrl + `Question/${Question.Id}`).subscribe({
       next: data => {
