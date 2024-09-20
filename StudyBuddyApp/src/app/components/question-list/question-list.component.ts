@@ -11,6 +11,13 @@ import { QuestionServiceService } from '../../services/question-service.service'
   styleUrl: './question-list.component.css'
 })
 export class QuestionListComponent implements OnInit {
+//
+  //
+  //NOTE: CURRENT API IS ALL LISTED IN QUESTION LIST COMPONENT. ARRAY AND OTHER CALLS WILL NEED TO BE MOVED TO PARENT COMPONENT THEN CODED TO PASS THE ARRAY ELEMENTS DOWN TO THIS COMPONENT. SOME CALLS LIKE ADD AND DELETE MAY STAY
+  //
+//
+
+
   questions: Question[] = [];
   questionService = inject(QuestionServiceService)
 
