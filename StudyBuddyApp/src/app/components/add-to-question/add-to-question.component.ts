@@ -29,13 +29,15 @@ export class AddToQuestionComponent implements OnInit {
     if (this.questionForm.valid) {
       const formData: Question = {
         QuestionText: this.questionForm.value.questionText,
-        IsFavorite:false,
+        IsFavorite: false,
         Answers: [
           this.questionForm.value.answer1,
           this.questionForm.value.answer2,
           this.questionForm.value.answer3,
           this.questionForm.value.answer4
         ].filter(answer => answer) // Filter out empty answers
+        ,
+        QuestionOptions: [] //what to do here??
       };
 
       this.http.post('https://your-api-endpoint.com/questions', formData).subscribe(response => {
