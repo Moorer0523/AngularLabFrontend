@@ -66,6 +66,7 @@ export class QuestionListComponent implements OnInit {
     }
   }
 
+
   //takes in a partial question object (everything but the ID), passes it
   addNewQuestion(question: Question) {
     this.questionAPI.postQuestion(question).subscribe({
@@ -77,10 +78,17 @@ export class QuestionListComponent implements OnInit {
       },
       complete: () => {
         console.log('Adding question complete');
-
         //upon completion of the push to DB, adds the question object to the questions array so a new complete pull of the question list isn't needed.
         this.questions.push(question);
       },
     });
   }
+
+  toggleFlip(event: Event) {
+    const card = (event.currentTarget as HTMLElement).querySelector('.flip-card-inner');
+    if (card) {
+      card.classList.toggle('flipped');
+    }
+  }
+
 }
