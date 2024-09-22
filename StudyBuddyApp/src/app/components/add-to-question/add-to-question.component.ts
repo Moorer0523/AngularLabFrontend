@@ -18,10 +18,7 @@ export class AddToQuestionComponent implements OnInit {
   ngOnInit(): void {
     this.questionForm = this.fb.group({
       questionText: [''],
-      answer1: [''],
-      answer2: [''],
-      answer3: [''],
-      answer4: ['']
+      answer1: '',
     });
   }
 
@@ -29,15 +26,8 @@ export class AddToQuestionComponent implements OnInit {
     if (this.questionForm.valid) {
       const formData: Question = {
         QuestionText: this.questionForm.value.questionText,
-        IsFavorite: false,
-        Answers: [
-          this.questionForm.value.answer1,
-          this.questionForm.value.answer2,
-          this.questionForm.value.answer3,
-          this.questionForm.value.answer4
-        ].filter(answer => answer) // Filter out empty answers
-        ,
-        QuestionOptions: [] //what to do here??
+        Answer: this.questionForm.value.answer1,
+        //removed the [] and the multiple choices 
       };
 
       this.http.post('https://your-api-endpoint.com/questions', formData).subscribe(response => {
