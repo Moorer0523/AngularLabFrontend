@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Question } from '../../models/question';
 import { CommonModule } from '@angular/common';
-import { QuestionServiceService } from '../../services/question-service.service';
+import { QuestionApiService } from '../../services/question-api.service';
 
 @Component({
   selector: 'app-question-list',
@@ -26,9 +26,9 @@ export class QuestionListComponent implements OnInit {
     IsFavorite: true,
   };
 
-  //Dependency Injection for QuestionServiceService. Its the API injection for questionAPI
+  //Dependency Injection for QuestionApiService. Its the API injection for questionAPI
 
-  constructor(private questionAPI: QuestionServiceService) {}
+  constructor(private questionAPI: QuestionApiService) {}
 
   ngOnInit(): void {
     //used to pull all questions from API on creation of the component. Should be moved to the parent component once we have it established and then used to pass question objects down to the child components
