@@ -7,7 +7,7 @@ import { Question } from '../models/question';
 @Injectable({
   providedIn: 'root'
 })
-export class QuestionServiceService {
+export class QuestionApiService {
 
   status: string ="";
   errorMessage: string ="";
