@@ -21,9 +21,7 @@ export class QuestionListComponent implements OnInit {
   exampleQuestion: Question = {
     Id: 1004,
     QuestionText: 'What currency is used in Japan?',
-    QuestionOptions: ['Yen'],
-    Answers: ['0'],
-    IsFavorite: true,
+    Answer: '0'
   };
 
   //Dependency Injection for QuestionApiService. Its the API injection for questionAPI
