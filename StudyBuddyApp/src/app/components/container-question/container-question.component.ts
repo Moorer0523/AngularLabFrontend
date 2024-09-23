@@ -26,6 +26,7 @@ ngOnInit(): void {
 
 //this array is used to store the results from the loadQuestions function.
 questions: Question[] = [];
+currentIndex: number = 0;
 
 //Pulls all available questions from the API and loads them into the questions array
 loadQuestions() {
