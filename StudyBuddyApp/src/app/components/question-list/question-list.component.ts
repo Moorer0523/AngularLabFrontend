@@ -19,9 +19,9 @@ export class QuestionListComponent implements OnInit {
 
   //for testing purposes, need to remove later
   exampleQuestion: Question = {
-    Id: 1004,
-    QuestionText: 'What currency is used in Japan?',
-    Answer: '0'
+    id: 1004,
+    questionText: 'What currency is used in Japan?',
+    answer: '0'
   };
 
   //Dependency Injection for QuestionApiService. Its the API injection for questionAPI
@@ -42,6 +42,7 @@ export class QuestionListComponent implements OnInit {
     this.questionAPI.getQuestions().subscribe({
       next: (data) => {
         this.questions = data;
+        console.log(this.questions);
       },
       error: (error) => {
         console.log(error);

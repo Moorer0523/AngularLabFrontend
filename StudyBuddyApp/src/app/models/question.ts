@@ -1,5 +1,5 @@
 export interface Question {
-    Id?:number;
-    QuestionText:string;   
-    Answer:string;
+    id?:number;
+    questionText:string;   
+    answer:string;
 }
