@@ -28,8 +28,10 @@ export class QuestionListComponent {
 
   constructor(private questionAPI: QuestionApiService) {}
 
+
   @Input() question:Question | null = null;
 questions: any;
+
 
   //takes in an entire question object as a parameter and then rips out the IP to pass along to detete it from the DB
   deleteQuestion(question: Question) {
