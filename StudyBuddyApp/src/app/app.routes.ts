@@ -5,7 +5,8 @@ import { ContainerQuestionComponent } from './components/container-question/cont
 // import { QuestionApiService } from './services/question-api.service';
 
 export const routes: Routes = [
-    
+  
     {path: 'form', component: AddToQuestionComponent},
     {path: '', component: ContainerQuestionComponent},
+
 ];
