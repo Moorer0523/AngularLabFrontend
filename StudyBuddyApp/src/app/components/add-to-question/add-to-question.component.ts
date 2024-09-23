@@ -25,8 +25,8 @@ export class AddToQuestionComponent implements OnInit {
   onSubmit(): void {
     if (this.questionForm.valid) {
       const formData: Question = {
-        QuestionText: this.questionForm.value.questionText,
-        Answer: this.questionForm.value.answer1,
+        questionText: this.questionForm.value.questionText,
+        answer: this.questionForm.value.answer1,
         //removed the [] and the multiple choices 
       };
 
