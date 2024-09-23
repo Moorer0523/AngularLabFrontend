@@ -1,7 +1,9 @@
 
+<button [routerLink]="['/']" routerLinkActive="active">Back to home</button> 
 <div>
     <div *ngFor="let question of favoriteQuestions">
             <app-question-list [question]="question"></app-question-list>
     </div>
 </div>
+
 

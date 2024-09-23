@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FavoritesApiService } from '../../services/favorites-api.service';
 import { Favorites } from '../../models/favorites';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,RouterModule } from '@angular/router';
 import { Question } from '../../models/question';
 import { QuestionApiService } from '../../services/question-api.service';
 import { QuestionListComponent } from "../question-list/question-list.component";
@@ -11,7 +11,7 @@ import { group } from '@angular/animations';
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [CommonModule,QuestionListComponent],
+  imports: [RouterModule, CommonModule, QuestionListComponent],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.css',
 })
