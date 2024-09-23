@@ -1,5 +1,5 @@
 export interface Favorites {
-    Id?:number;
-    UserId:number;
-    FavoriteQuestions: number[]
+    id?:number;
+    userId:number;
+    favoriteQuestions: number[]
 }

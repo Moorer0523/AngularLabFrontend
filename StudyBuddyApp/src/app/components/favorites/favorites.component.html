@@ -1,0 +1,12 @@
+
+<div *ngif="favorites.id != null">
+    <div *ngFor="let question of questions">
+        <li>
+            <app-question-list [question]="questions[currentIndex]"></app-question-list>
+        <button>Add to favorites</button>
+        <button (click) = "currentIndex = currentIndex - 1" *ngIf="currentIndex > 0">Previous</button>
+        <button (click) = "currentIndex = currentIndex + 1" *ngIf="currentIndex < questions.length - 1">Next</button>
+        </li>
+    </div>
+</div>
+
