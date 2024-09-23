@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Question } from '../../models/question';
 import { CommonModule } from '@angular/common';
 import { QuestionApiService } from '../../services/question-api.service';
@@ -10,7 +10,7 @@ import { QuestionApiService } from '../../services/question-api.service';
   templateUrl: './question-list.component.html',
   styleUrl: './question-list.component.css',
 })
-export class QuestionListComponent implements OnInit {
+export class QuestionListComponent {
   //
   //
   //NOTE: CURRENT API IS ALL LISTED IN QUESTION LIST COMPONENT. ARRAY AND OTHER CALLS WILL NEED TO BE MOVED TO PARENT COMPONENT THEN CODED TO PASS THE ARRAY ELEMENTS DOWN TO THIS COMPONENT. SOME CALLS LIKE ADD AND DELETE MAY STAY
@@ -28,30 +28,10 @@ export class QuestionListComponent implements OnInit {
 
   constructor(private questionAPI: QuestionApiService) {}
 
-  ngOnInit(): void {
-    //used to pull all questions from API on creation of the component. Should be moved to the parent component once we have it established and then used to pass question objects down to the child components
-    console.log('Loading Questions');
-    this.loadQuestions();
-  }
 
-  //this array is used to store the results from the loadQuestions function.
-  questions: Question[] = [];
+  @Input() question:Question | null = null;
+questions: any;
 
-  //Pulls all available questions from the API and loads them into the questions array
-  loadQuestions() {
-    this.questionAPI.getQuestions().subscribe({
-      next: (data) => {
-        this.questions = data;
-        console.log(this.questions);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {
-        console.log('Loading questions complete');
-      },
-    });
-  }
 
   //takes in an entire question object as a parameter and then rips out the IP to pass along to detete it from the DB
   deleteQuestion(question: Question) {

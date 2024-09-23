@@ -1,11 +1,12 @@
-<div *ngFor="let question of questions" class="flip-card" (click)="toggleFlip($event)">
+<div class="flip-card" (click)="toggleFlip($event)">
     <div class="flip-card-inner">
         <div class="flip-card-front">
-            <h3>{{ question.questionText }}</h3>
+            <h3>{{ question?.questionText }}</h3>
         </div>
         <div class="flip-card-back">
             <ul>
-                <li>{{ question.answer }}</li>
+                <li>{{ question?.answer }}</li>
+
             </ul>
         </div>
     </div>
