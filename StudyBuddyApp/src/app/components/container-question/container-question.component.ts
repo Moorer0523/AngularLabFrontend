@@ -28,7 +28,7 @@ ngOnInit(): void {
 questions: Question[] = [];
 currentIndex: number = 0;
 
-userId : number = Math.floor(Math.random()*9) 
+userId : number = Math.floor(Math.random()*9 + 1) 
 
 //Pulls all available questions from the API and loads them into the questions array
 loadQuestions() {
