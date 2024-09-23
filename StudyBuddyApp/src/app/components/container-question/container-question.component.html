@@ -3,8 +3,9 @@
 
 
 <nav> 
-    <button onclick="location.href='home.html'">Home</button>
-    <button onclick="location.href='favorites.html'">Favorites</button>
+    <button routerLink="" routerLinkActive="active">Home</button>
+    <button [routerLink]="['/favorites', userId]" routerLinkActive="active">Favorites</button>
+    <button routerLink="add-question" routerLinkActive="active">New Question</button>
 </nav>
 
     <li *ngFor="let question of questions">

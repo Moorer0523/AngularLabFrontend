@@ -21,7 +21,7 @@ export class FavoritesApiService {
   }
 
   putFavorites(favorites : Favorites): Observable<Favorites>{
-    return this.http.put<Favorites>(environment.apiUrl + `Favorites/${favorites.Id}`, favorites)
+    return this.http.put<Favorites>(environment.apiUrl + `Favorites/${favorites.id}`, favorites)
   }
 
   postFavorites(favorites : Favorites): Observable<Omit<Favorites,"Id">>{
