@@ -1,8 +1,17 @@
-<ul>
+
+<h1>Study Buddy <br> Question List</h1>
+
+
+<nav> 
+    <button onclick="location.href='home.html'">Home</button>
+    <button onclick="location.href='favorites.html'">Favorites</button>
+</nav>
+
     <li *ngFor="let question of questions">
-    <app-question-list [question]="question"></app-question-list>
-    <button>Add to favorites</button>
-    <button>Previous</button>
-    <button>Next</button>
     </li>
-</ul>
+    <li>
+        <app-question-list [question]="questions[currentIndex]"></app-question-list>
+    <button>Add to favorites</button>
+    <button (click) = "currentIndex = currentIndex - 1" *ngIf="currentIndex > 0">Previous</button>
+    <button (click) = "currentIndex = currentIndex + 1" *ngIf="currentIndex < questions.length - 1">Next</button>
+    </li>
